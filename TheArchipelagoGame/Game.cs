@@ -11,15 +11,20 @@ namespace TheArchipelagoGame
         public Player player = new Player();
         public List<Islands> Islands = new List<Islands>();
         public Islands CurrentIsland { get; set; }
+        public string QuestDescription;
 
       public Game()
         {
+            QuestDescription = " You ";
             Items Flintlock = new Items("", "");
+
 
             Islands PirateIsland = new Islands()
             {
-                Name = "Pirate Island",
+                Name = @"Pirate Island
+                    ",
                 Description = "Island Filled with the meanest and badest Pirates",
+                Narration = "You head towards the island of Pirates docking your ship on the only port.",
                 Items = {},
                 ImagePath = "",
             };
@@ -27,7 +32,8 @@ namespace TheArchipelagoGame
 
             Islands FrontierIsland = new Islands()
             {
-                Name = "Frontier Island",
+                Name = @"Frontier Island
+                        ",
                 Description = "A western oasis for Cowboys, Cowgirls, and Outlaws ",
                 Items = { },
                 ImagePath = "",
@@ -36,7 +42,9 @@ namespace TheArchipelagoGame
 
             Islands FantasyIsland = new Islands()
             {
-                Name = "Middle-Earth Island",
+                Name = @"Middle-Earth 
+    Island
+                         ",
                 Description = "A Magical and Mystic Island full of things straigh out of a fantasy book.",
                 Items = { },
                 ImagePath = "",

@@ -10,6 +10,7 @@ namespace TheArchipelagoGame
     {
         public string Name;
         public string Description;
+        public string Narration;
         public List<Items> Items = new List<Items>();
         public string ImagePath { get; set; }
       

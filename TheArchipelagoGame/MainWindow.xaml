@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheArchipelagoGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="530" Width="800">
+        Title="MainWindow" Height="530" Width="800" Background="#FF1E2020">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="103*"/>
-            <RowDefinition Height="316*"/>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="164*"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="ContentFrame" Content="" HorizontalAlignment="Left" Height="431" Grid.RowSpan="2" VerticalAlignment="Top" Width="792"/>
+        <Frame x:Name="ContentFrame" Content="" Grid.RowSpan="2" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

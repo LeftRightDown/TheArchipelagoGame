@@ -9,6 +9,8 @@ namespace TheArchipelagoGame
     public class Player
     {
         public List<string> Inventory;
+        public string Name;
+        public string Description;
 
         public Player()
         {

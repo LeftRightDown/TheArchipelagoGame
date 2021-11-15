@@ -23,6 +23,7 @@ namespace TheArchipelagoGame
         public Start()
         {
             InitializeComponent();
+
         }
 
         private void NavigateButton_Click(object sender, RoutedEventArgs e)
@@ -33,7 +34,7 @@ namespace TheArchipelagoGame
             {
                 case "Button1":
                     //Start
-                   NavigationService.Navigate(new Uri("Locations.xaml", UriKind.Relative));
+                   NavigationService.Navigate(new Uri("Quest.xaml", UriKind.Relative));
                     break;
                 case "Button2":
                     //Credits
