@@ -80,7 +80,7 @@ namespace TheArchipelagoGame
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            IslandName.Content = "Choose and Island";
+            IslandName.Content = "Choose an Island";
             IslandDescription.Visibility = Visibility.Hidden;
 
         }

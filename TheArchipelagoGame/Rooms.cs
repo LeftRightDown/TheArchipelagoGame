@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace TheArchipelagoGame
 {
-    public class Islands
+    public class Rooms
     {
         public string Name;
         public string Description;
-        public string Narration;
-        public List<Items> Items = new List<Items>();
-        public List<Rooms> Rooms = new List<Rooms>();
-        public NPC GameNPC {get; set;}
         public string ImagePath { get; set; }
-      
 
+        public Rooms(string name, string description)
+        {
+            Name = name;    
+            Description = description;
+        } 
     }
 }

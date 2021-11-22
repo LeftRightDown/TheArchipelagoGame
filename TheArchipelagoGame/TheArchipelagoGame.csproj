@@ -59,9 +59,11 @@
     <Compile Include="Location.xaml.cs">
       <DependentUpon>Location.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NPC.cs" />
     <Compile Include="Quest.xaml.cs">
       <DependentUpon>Quest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Rooms.cs" />
     <Compile Include="Start.xaml.cs">
       <DependentUpon>Start.xaml</DependentUpon>
     </Compile>

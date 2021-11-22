@@ -39,7 +39,7 @@ namespace TheArchipelagoGame
                 case "Button2":
                     //Credits
                     MessageBox.Show(@"
-                    Creator: Zachary Tan
+     Creator: Zachary Tan
 
                             ");
                     break;
