@@ -48,6 +48,7 @@ namespace TheArchipelagoGame
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;
                     IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
                     ContinueButton.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Visible;
                     break;
 
                 case "Option2":
@@ -59,6 +60,7 @@ namespace TheArchipelagoGame
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;
                     IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
                     ContinueButton.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Visible;
                     break;
 
                 case "Option3":
@@ -70,6 +72,7 @@ namespace TheArchipelagoGame
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;
                     IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
                     ContinueButton.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Visible;
                     break;
             }
             
@@ -83,8 +86,10 @@ namespace TheArchipelagoGame
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            BackButton.Visibility = Visibility.Hidden;
             IslandName.Content = "Choose an Island";
             IslandDescription.Visibility = Visibility.Hidden;
+            ContinueButton.Visibility= Visibility.Hidden;
 
         }
     }
