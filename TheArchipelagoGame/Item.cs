@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TheArchipelagoGame
 {
-    public class Items
+    public class Item
     {
         public string Name;
         public string Description;
 
-        public Items(string name, string description)
+        public Item(string name, string description)
         {
             Name = name;
             Description = description;

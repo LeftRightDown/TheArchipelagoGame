@@ -44,8 +44,9 @@ namespace TheArchipelagoGame
                     MainWindow.game.CurrentIsland = MainWindow.game.Islands[0];
                    
                     IslandDescription.Visibility = Visibility.Visible;
+                    IslandDescriptionBackground.Visibility = Visibility.Visible;
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;
-                    IslandDescription.Content = MainWindow.game.CurrentIsland.Description;
+                    IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
                     ContinueButton.Visibility = Visibility.Visible;
                     break;
 
@@ -54,8 +55,9 @@ namespace TheArchipelagoGame
                     MainWindow.game.CurrentIsland = MainWindow.game.Islands[1];
                   
                     IslandDescription.Visibility = Visibility.Visible;
+                    IslandDescriptionBackground.Visibility = Visibility.Visible;
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;
-                    IslandDescription.Content = MainWindow.game.CurrentIsland.Description;
+                    IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
                     ContinueButton.Visibility = Visibility.Visible;
                     break;
 
@@ -64,8 +66,9 @@ namespace TheArchipelagoGame
                     MainWindow.game.CurrentIsland = MainWindow.game.Islands[2];
                   
                     IslandDescription.Visibility = Visibility.Visible;
+                    IslandDescriptionBackground.Visibility = Visibility.Visible;
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;
-                    IslandDescription.Content = MainWindow.game.CurrentIsland.Description;
+                    IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
                     ContinueButton.Visibility = Visibility.Visible;
                     break;
             }

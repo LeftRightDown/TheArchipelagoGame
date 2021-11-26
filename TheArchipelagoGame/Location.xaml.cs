@@ -25,14 +25,16 @@ namespace TheArchipelagoGame
             InitializeComponent();
             IslandTitle.Content = MainWindow.game.CurrentIsland.Name;
             IslandNarration.Content = MainWindow.game.CurrentIsland.Narration;
-            ItemButton.Content = MainWindow.game.CurrentIsland.Items[0].Name;
+            ItemButton.Content = MainWindow.game.CurrentIsland.Item[0].Name;
 
             string inventory = String.Empty;
+
             foreach (string item in MainWindow.game.player.Inventory)
             {
-                inventory = $"{item}\n";
+                inventory += $"{item}\n";
             }
-             InventoryList.Content = inventory; 
+            InventoryList.Content = inventory;
+
         }
         //Back Button
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -46,35 +48,37 @@ namespace TheArchipelagoGame
         }
 
         //Item Button
+     
         private void ItemButton_Click(object sender, RoutedEventArgs e)
         {
             string items = String.Empty;
-           
-            items = MainWindow.game.CurrentIsland.Items[0].Name;
+            
+            if (MainWindow.game.player.SearchInventory(requiredItem))
+            {
+                items = MainWindow.game.CurrentIsland.Item[0].Name;
                 if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
                 {
                     MainWindow.game.player.InventoryAdd(items);
+                    this.NavigationService.Refresh();
                 }
                 else
                 {
                     MessageBox.Show($"You Arleady have {items} in your inventory");
                 }
+            }
+            
           
             
         }
-
-        private void ItemButtonProperty(object sender, DependencyPropertyChangedEventArgs e)
+        private void ItemButtonTwo_Click(object sender, RoutedEventArgs e)
         {
-            Task.Delay(5000).ContinueWith(_ =>
-            {
-                ItemButton.Visibility = Visibility.Visible;
 
-            }
-            );
         }
+      
         //Inventory Button
         private void InventoryButton_Click(object sender, RoutedEventArgs e)
         {
+            
             InventoryList.Visibility = Visibility.Visible;
             InventoryTitle.Visibility = Visibility.Visible;
             InventoryButton.Visibility = Visibility.Hidden;

@@ -9,7 +9,7 @@
       Title="TropicalSea">
 
     <Grid>
-        <Rectangle x:Name="SideBar" Fill="#FFF6EAE0" HorizontalAlignment="Left" Height="447" Stroke="Black" VerticalAlignment="Top" Width="199"/>
+        <Rectangle x:Name="SideBar" Fill="#FFF6EAE0" HorizontalAlignment="Left" Stroke="Black" Width="199" Margin="0,0,0,3"/>
         <Button x:Name="Option1" Content="" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="176" Height="58" Click="NavigateButton_Click" FontFamily="Rockwell" IsCancel="True" FontSize="20" Background="#FF1E2020" Foreground="#FFF6EAE0"/>
         <Button x:Name="Option2" Content="" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Width="176" Height="58" Click="NavigateButton_Click" FontSize="20" FontFamily="Rockwell" Background="#FF1E2020" Foreground="#FFF6EAE0"/>
         <Button x:Name="Option3" Content="" HorizontalAlignment="Left" Margin="10,333,0,0" VerticalAlignment="Top" Width="176" Height="57" FontSize="20" FontFamily="Rockwell" Click="NavigateButton_Click" Background="#FF1E2020" Foreground="#FFF6EAE0"/>
@@ -18,10 +18,11 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Label x:Name="IslandDescription" Content="Island Description" HorizontalAlignment="Right" Margin="0,118,0,0" VerticalAlignment="Top" Height="64" Width="504" Foreground="#FF1A1A1A" Background="#FFF6EAE0" FontFamily="Showcard Gothic" Visibility="Hidden" FontSize="18"/>
         <Label x:Name="SidebarTitle" Content="Islands" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Height="62" Width="176" Foreground="#FF1E2020" FontSize="40" FontFamily="Showcard Gothic"/>
         <Button x:Name="ContinueButton" Content="Continue" Background="#FF1A1A1A" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="18" Click="ContinueButton_Click" Margin="668,392,24,24" Visibility="Hidden"/>
         <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top" Width="64" FontSize="16" FontStretch="Normal" FontFamily="Showcard Gothic" Background="#FF1A1A1A" Foreground="#FFCACACA" Click="BackButton_Click"/>
+        <Rectangle x:Name="IslandDescriptionBackground" Height="82" Margin="290,106,0,0" VerticalAlignment="Top" Fill="#FFF6EAE0" Visibility="Hidden"/>
+        <TextBlock x:Name="IslandDescription" Margin="300,110,10,0" TextWrapping="WrapWithOverflow" Text="TextBlock" FontFamily="Rockwell" Foreground="#FF1A1A1A" FontSize="20" Visibility="Hidden" Height="74" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

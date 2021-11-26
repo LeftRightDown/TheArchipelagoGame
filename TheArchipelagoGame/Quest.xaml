@@ -9,7 +9,11 @@
       Title="Quest">
 
     <Grid>
-        <Canvas Margin="83,34,83,50" Background="#FFF6EAE0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="221*"/>
+            <RowDefinition Height="229*"/>
+        </Grid.RowDefinitions>
+        <Canvas Margin="0,0,0,50" Background="#FFF6EAE0" HorizontalAlignment="Center" Width="634" Grid.RowSpan="2" Height="366" VerticalAlignment="Bottom">
             <Label x:Name="QuestTitle" Content="QUEST" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="48" FontStyle="Normal" FontStretch="Normal" FontWeight="Normal" HorizontalContentAlignment="Center" Height="62" Canvas.Left="73" Canvas.Top="32" Width="488" Background="#FF1A1A1A">
                 <Label.Effect>
                     <DropShadowEffect/>
