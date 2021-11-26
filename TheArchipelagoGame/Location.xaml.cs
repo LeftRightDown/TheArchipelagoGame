@@ -30,7 +30,7 @@ namespace TheArchipelagoGame
             string inventory = String.Empty;
             foreach (string item in MainWindow.game.player.Inventory)
             {
-                inventory = $"{item}\n";
+                inventory += $"{item}\n";
             }
              InventoryList.Content = inventory; 
         }
@@ -51,9 +51,10 @@ namespace TheArchipelagoGame
             string items = String.Empty;
            
             items = MainWindow.game.CurrentIsland.Items[0].Name;
-                if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
+                if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items) && MainWindow))
                 {
                     MainWindow.game.player.InventoryAdd(items);
+                    NavigationService.Refresh();
                 }
                 else
                 {
