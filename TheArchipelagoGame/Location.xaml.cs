@@ -27,6 +27,8 @@ namespace TheArchipelagoGame
             IslandNarration.Content = MainWindow.game.CurrentIsland.Narration;
             ItemButton.Content = MainWindow.game.CurrentIsland.Item[0].Name;
 
+
+
             string inventory = String.Empty;
 
             foreach (string item in MainWindow.game.player.Inventory)
@@ -44,18 +46,37 @@ namespace TheArchipelagoGame
         //Quest Button
         private void QuestButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Quest: ");
+            MessageBox.Show(MainWindow.game.QuestDescription);
         }
 
         //Item Button
-     
+
         private void ItemButton_Click(object sender, RoutedEventArgs e)
         {
             string items = String.Empty;
-            
-            if (MainWindow.game.player.SearchInventory(requiredItem))
+
+
+            items = MainWindow.game.CurrentIsland.Item[0].Name;
+            if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
             {
-                items = MainWindow.game.CurrentIsland.Item[0].Name;
+                MainWindow.game.player.InventoryAdd(items);
+                this.NavigationService.Refresh();
+            }
+            else
+            {
+                MessageBox.Show($"You Arleady have {items} in your inventory");
+            }
+        }
+        
+        private void ItemButtonTwo_Click(object sender, RoutedEventArgs e)
+        {
+            string items = String.Empty;
+            string requiredItems = MainWindow.game.CurrentNPC.RequiredItem.Name;
+
+            if (MainWindow.game.player.SearchInventory(requiredItems))
+                ItemButtonTwo.Visibility = Visibility.Visible;
+            {
+                items = MainWindow.game.CurrentIsland.Item[1].Name;
                 if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
                 {
                     MainWindow.game.player.InventoryAdd(items);
@@ -66,17 +87,13 @@ namespace TheArchipelagoGame
                     MessageBox.Show($"You Arleady have {items} in your inventory");
                 }
             }
-            
-          
-            
+            else
+            {
+                MessageBox.Show($"You do not have {items} in inventory.");
+            }
         }
-        private void ItemButtonTwo_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-      
-        //Inventory Button
-        private void InventoryButton_Click(object sender, RoutedEventArgs e)
+            //Inventory Button
+            private void InventoryButton_Click(object sender, RoutedEventArgs e)
         {
             
             InventoryList.Visibility = Visibility.Visible;

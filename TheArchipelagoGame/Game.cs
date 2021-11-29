@@ -21,21 +21,21 @@ namespace TheArchipelagoGame
 
       public Game()
         {
-            QuestDescription = " You ";
+            QuestDescription = " Make it to your friend's birthday party on Party Island.";
             
             //Creating Items
-            Item Flintlock = new Item("Flintlock", "");
-            Item EyePatch = new Item("EyePatch", "");
+            Item Flintlock = new Item("Flintlock", "A Vintage Weapon from the Golden Years.");
+            Item EyePatch = new Item("EyePatch", "Stops things from entering the gaping whole in your eye.");
 
-            Item HorseShoe= new Item("Horse Shoe", "");
-            Item CowboyHat = new Item("Cowboy Hat", "");
+            Item HorseShoe= new Item("Horse Shoe", "Not Stolen off a horse.");
+            Item CowboyHat = new Item("Cowboy Hat", "Want to look fashionable? Here's your chance.");
 
-            Item WizardStaff = new Item("Wizard Staff", "");
-            Item HealthPotion = new Item("Health Potion", "");
+            Item WizardStaff = new Item("Wizard Staff", "Thick old tree branch that shoots lightning");
+            Item HealthPotion = new Item("Health Potion", "Drink it and find out!");
           
             //Creatng Rooms
-            Rooms PirateShip = new Rooms("Pirate Ship", "");
-            Rooms Dungeons = new Rooms("Dungeon", "");
+            Rooms PirateShip = new Rooms("Pirate Ship", "A Shady yet wholesome home.");
+            Rooms Dungeons = new Rooms("Dungeon", "A Mysterious cave with nice furniature.");
 
             //Creating NPCS
             NPC PirateNPC = new NPC("", "", Flintlock, HorseShoe);
