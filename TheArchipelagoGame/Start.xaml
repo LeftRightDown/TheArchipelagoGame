@@ -5,14 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TheArchipelagoGame"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="Start" Height="534">
+      Title="Start" Height="530">
 
-    <Grid>
-        <Rectangle x:Name="SideBar" Fill="#FFF6EAE0" HorizontalAlignment="Left" Height="447" Stroke="Black" VerticalAlignment="Top" Width="199"/>
-        <Label x:Name="GameTitle" Content="The Archipelago" Margin="4,10,0,0" VerticalAlignment="Top" FontFamily="Showcard Gothic" FontSize="20" Width="263" HorizontalAlignment="Left" Foreground="#FF1E2020"/>
-        <Button x:Name="Button1" Content="Start" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="176" Height="58" Click="NavigateButton_Click" FontFamily="Rockwell" IsCancel="True" FontSize="36" Foreground="#FFF6EAE0" Background="#FF1E2020"/>
-        <Button x:Name="Button2" Content="Credits" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="176" Height="58" Click="NavigateButton_Click" FontSize="36" FontFamily="Rockwell" Foreground="#FFF6EAE0" Background="#FF1E2020"/>
-        <Button x:Name="Button3" Content="Exit" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Width="176" Height="57" FontSize="36" FontFamily="Rockwell" Click="NavigateButton_Click" Foreground="#FFF6EAE0" Background="#FF1E2020"/>
+    <Grid HorizontalAlignment="Left" Width="800">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="SideBar" Fill="#FFF6EAE0" Stroke="Black" Margin="0,0,0,87" HorizontalAlignment="Left" Width="203"/>
+        <Label x:Name="GameTitle" Content="The Archipelago" Margin="7,34,0,0" FontFamily="Showcard Gothic" FontSize="20" Foreground="#FF1E2020" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="189"/>
+        <Button x:Name="Button1" Content="Start" Margin="14,118,0,0" VerticalAlignment="Top" Height="58" Click="NavigateButton_Click" FontFamily="Rockwell" IsCancel="True" FontSize="36" Foreground="#FFF6EAE0" Background="#FF1E2020" HorizontalAlignment="Left" Width="176"/>
+        <Button x:Name="Button2" Content="Credits" Margin="14,0,0,0" VerticalAlignment="Center" Height="58" Click="NavigateButton_Click" FontSize="36" FontFamily="Rockwell" Foreground="#FFF6EAE0" Background="#FF1E2020" HorizontalAlignment="Left" Width="176"/>
+        <Button x:Name="Button3" Content="Exit" Margin="14,351,0,0" VerticalAlignment="Top" Height="58" FontSize="36" FontFamily="Rockwell" Click="NavigateButton_Click" Foreground="#FFF6EAE0" Background="#FF1E2020" HorizontalAlignment="Left" Width="176"/>
 
     </Grid>
 </Page>

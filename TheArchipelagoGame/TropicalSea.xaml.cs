@@ -29,6 +29,7 @@ namespace TheArchipelagoGame
             Option1.Content = MainWindow.game.Islands[0].Name;
             Option2.Content = MainWindow.game.Islands[1].Name;
             Option3.Content = MainWindow.game.Islands[2].Name;
+            Option4.Content = MainWindow.game.Islands[3].Name;
 
         }
 
@@ -37,6 +38,7 @@ namespace TheArchipelagoGame
         {
             Button button = (Button)sender;
             string itemName = String.Empty;
+
             switch (button.Name)
             {
                 case "Option1":
@@ -67,6 +69,18 @@ namespace TheArchipelagoGame
                     //Fantasy Island
                     MainWindow.game.CurrentIsland = MainWindow.game.Islands[2];
                   
+                    IslandDescription.Visibility = Visibility.Visible;
+                    IslandDescriptionBackground.Visibility = Visibility.Visible;
+                    IslandName.Content = MainWindow.game.CurrentIsland.Name;
+                    IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
+                    ContinueButton.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Visible;
+                    break;
+
+                case "Option4":
+                    //PartyIsland
+                    MainWindow.game.CurrentIsland = MainWindow.game.Islands[3];
+
                     IslandDescription.Visibility = Visibility.Visible;
                     IslandDescriptionBackground.Visibility = Visibility.Visible;
                     IslandName.Content = MainWindow.game.CurrentIsland.Name;

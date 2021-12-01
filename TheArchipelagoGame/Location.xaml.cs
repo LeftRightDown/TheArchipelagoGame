@@ -24,8 +24,9 @@ namespace TheArchipelagoGame
         {
             InitializeComponent();
             IslandTitle.Content = MainWindow.game.CurrentIsland.Name;
-            IslandNarration.Content = MainWindow.game.CurrentIsland.Narration;
+            IslandNarration.Text = MainWindow.game.CurrentIsland.Narration;
             ItemButton.Content = MainWindow.game.CurrentIsland.Item[0].Name;
+            ItemButton.ToolTip = MainWindow.game.CurrentIsland.Item[0].Description;
 
 
 
@@ -50,17 +51,17 @@ namespace TheArchipelagoGame
         }
 
         //Item Button
-
         private void ItemButton_Click(object sender, RoutedEventArgs e)
         {
             string items = String.Empty;
-
+            
 
             items = MainWindow.game.CurrentIsland.Item[0].Name;
             if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
             {
                 MainWindow.game.player.InventoryAdd(items);
                 this.NavigationService.Refresh();
+                MessageBox.Show($"You have Aquired {items}!");
             }
             else
             {
@@ -68,32 +69,8 @@ namespace TheArchipelagoGame
             }
         }
         
-        private void ItemButtonTwo_Click(object sender, RoutedEventArgs e)
-        {
-            string items = String.Empty;
-            string requiredItems = MainWindow.game.CurrentNPC.RequiredItem.Name;
-
-            if (MainWindow.game.player.SearchInventory(requiredItems))
-                ItemButtonTwo.Visibility = Visibility.Visible;
-            {
-                items = MainWindow.game.CurrentIsland.Item[1].Name;
-                if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
-                {
-                    MainWindow.game.player.InventoryAdd(items);
-                    this.NavigationService.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show($"You Arleady have {items} in your inventory");
-                }
-            }
-            else
-            {
-                MessageBox.Show($"You do not have {items} in inventory.");
-            }
-        }
             //Inventory Button
-            private void InventoryButton_Click(object sender, RoutedEventArgs e)
+        private void InventoryButton_Click(object sender, RoutedEventArgs e)
         {
             
             InventoryList.Visibility = Visibility.Visible;
@@ -103,7 +80,6 @@ namespace TheArchipelagoGame
             BackButton.Visibility = Visibility.Hidden;
             BackButtonInventory.Visibility = Visibility.Visible;
             
-           
         }
 
         private void BackButtonInventory_Click(object sender, RoutedEventArgs e)
@@ -116,6 +92,25 @@ namespace TheArchipelagoGame
             BackButtonInventory.Visibility = Visibility.Hidden;
         }
 
-       
+        
+        private void IslandRoomButtons_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("IslandRooms.xaml", UriKind.Relative));
+        }
+
+
+
+        //private void PartyIslandReveal()   
+        //{
+        //    string BirthdayCake = MainWindow.game.Item[;
+        //    if (MainWindow.game.player.SearchInventory())
+        //    {
+
+        //    }
+
+        //}
+
+
+
     }
 }

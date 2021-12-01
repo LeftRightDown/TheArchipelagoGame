@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TheArchipelagoGame"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="530" d:DesignWidth="800"
       Title="Quest">
 
     <Grid>
@@ -13,14 +13,14 @@
             <RowDefinition Height="221*"/>
             <RowDefinition Height="229*"/>
         </Grid.RowDefinitions>
-        <Canvas Margin="0,0,0,50" Background="#FFF6EAE0" HorizontalAlignment="Center" Width="634" Grid.RowSpan="2" Height="366" VerticalAlignment="Bottom">
+        <Canvas Margin="83,54,83,54" Background="#FFF6EAE0" Grid.RowSpan="2">
             <Label x:Name="QuestTitle" Content="QUEST" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="48" FontStyle="Normal" FontStretch="Normal" FontWeight="Normal" HorizontalContentAlignment="Center" Height="62" Canvas.Left="73" Canvas.Top="32" Width="488" Background="#FF1A1A1A">
                 <Label.Effect>
                     <DropShadowEffect/>
                 </Label.Effect>
             </Label>
-            <Label x:Name="QuestLabel" Content="Label" Canvas.Left="57" Canvas.Top="137" Height="182" Width="526" Foreground="#FF1A1A1A" FontSize="24" FontFamily="Showcard Gothic"/>
-            <Button x:Name="ContinueButton" Content="Continue" Canvas.Left="498" Canvas.Top="324" Width="109" Background="#FF1A1A1A" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="18" Click="ContinueButton_Click"/>
+            <Button x:Name="ContinueButton" Content="Continue" Canvas.Left="515" Canvas.Top="369" Width="109" Background="#FF1A1A1A" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="18" Click="ContinueButton_Click"/>
+            <TextBlock x:Name="QuestDescription" Canvas.Left="43" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="135" Height="234" Width="564" FontFamily="Rockwell" FontSize="20"/>
         </Canvas>
 
     </Grid>
