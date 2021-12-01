@@ -23,7 +23,7 @@ namespace TheArchipelagoGame
         public Quest()
         {
             InitializeComponent();
-            QuestLabel.Content = MainWindow.game.QuestDescription;
+            QuestDescription.Text = MainWindow.game.QuestDescription;
         }
 
         private void ContinueButton_Click(object sender, RoutedEventArgs e)

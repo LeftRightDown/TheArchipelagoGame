@@ -12,12 +12,14 @@ namespace TheArchipelagoGame
         public string Description;
         public Item NPCItem { get; set; }
         public Item RequiredItem { get; set; }
-        public NPC(string name, string description, Item item, Item requiredItem)
+        public Item RequiredItemTwo { get; set; }
+        public NPC(string name, string description, Item item, Item requiredItem, Item requiredItemTwo)
         {
             Name = name;
             Description = description;
             RequiredItem = requiredItem;
             NPCItem = item;
+            RequiredItemTwo = requiredItemTwo;
 
         }
        

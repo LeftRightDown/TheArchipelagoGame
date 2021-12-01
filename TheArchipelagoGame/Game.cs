@@ -18,39 +18,53 @@ namespace TheArchipelagoGame
         public Islands CurrentIsland { get; set; }
         public Item CurrentItem { get; set; }
         public string QuestDescription;
+        
 
       public Game()
         {
-            QuestDescription = " Make it to your friend's birthday party on Party Island.";
+            QuestDescription = @"Deliver the birthday cake to your friends party on Pirate Island! 
             
+             1. Visit Sheriff Marcus to obtain Cake Coupon.
+                                
+             2.Trade a Flintlock with Guild Master Egor for Cake.
+
+             3. Make it to the Party!
+
+                ";
+           
             //Creating Items
             Item Flintlock = new Item("Flintlock", "A Vintage Weapon from the Golden Years.");
             Item EyePatch = new Item("EyePatch", "Stops things from entering the gaping whole in your eye.");
 
             Item HorseShoe= new Item("Horse Shoe", "Not Stolen off a horse.");
-            Item CowboyHat = new Item("Cowboy Hat", "Want to look fashionable? Here's your chance.");
+            Item CakeCoupon = new Item("Cake Coupon", "Enables Trade for Cake");
+            Item CowboyHat = new Item("Cowbow Hat", "Fashionable Acessory");
+            
 
             Item WizardStaff = new Item("Wizard Staff", "Thick old tree branch that shoots lightning");
-            Item HealthPotion = new Item("Health Potion", "Drink it and find out!");
+            Item BirthdayCake = new Item("Birthday Cake", "Most Delicious Cake EVER");
+            Item HealthPotion = new Item("Health Potion", "EMERGENCY USE ONLY");
+            
           
             //Creatng Rooms
             Rooms PirateShip = new Rooms("Pirate Ship", "A Shady yet wholesome home.");
-            Rooms Dungeons = new Rooms("Dungeon", "A Mysterious cave with nice furniature.");
+            Rooms Dungeons = new Rooms("Dungeon", "A Mysterious cave with nice furniture.");
 
             //Creating NPCS
-            NPC PirateNPC = new NPC("", "", Flintlock, HorseShoe);
-            NPC SheriffeNPC = new NPC("", "",CowboyHat, WizardStaff);
-            NPC GuildMasterNPC = new NPC("", "", WizardStaff, Flintlock);
+            NPC PirateNPC = new NPC("Captian Bon", "Today is their birthday!", Flintlock, CowboyHat, BirthdayCake);
+            NPC SheriffNPC = new NPC("Sheriff Marcus", "Man of Few Words",CowboyHat, WizardStaff, EyePatch);
+            NPC GuildMasterNPC = new NPC("Guild Master Egor", "Retired Cake Maker", BirthdayCake, Flintlock, CakeCoupon);
+            
             //Creating Islands
             Islands PirateIsland = new Islands()
             {
                 Name = @"Pirate Island
                     ",
                 Description = "Island Filled with the meanest and badest Pirates",
-                Narration = "You head towards the island of Pirates docking your ship on the only port.",
-                Item = { Flintlock, EyePatch },
+                Narration = @"You head towards the island of Pirates docking your ship on the only port.",
+                Item = { EyePatch, Flintlock },
                 ImagePath = "",
-                Rooms = { },
+                Rooms = {PirateShip},
                 GameNPC = PirateNPC
             };
             Islands.Add(PirateIsland);
@@ -60,27 +74,38 @@ namespace TheArchipelagoGame
             {
                 Name = @"Frontier Island
                         ",
-                Description = "A western oasis for Cowboys, Cowgirls, and Outlaws ",
-                Item = {HorseShoe, CowboyHat},
+                Description = @"A western oasis for Cowboys, Cowgirls, and Outlaws",
+                Narration = "Before Sheriff Marcus can give you the coupon he wants to trade it for a Wizard Staff and Eye.",
+                Item = {HorseShoe, CakeCoupon},
                 ImagePath = "",
-                Rooms = {},
-                GameNPC = SheriffeNPC
+                Rooms = {Dungeons},
+                GameNPC = SheriffNPC
             };
             Islands.Add(FrontierIsland);
 
             Islands FantasyIsland = new Islands()
             {
                 Name = @"Middle-Earth 
-     Island
+                Island
                          ",
-                Description = "A Magical and Mystic Island full of things straigh out of a fantasy book.",
-                Item = {WizardStaff,HealthPotion},
+                Narration = "",
+                Description = @"A Magical and Mystic Island full of things straigh out of a fantasy book.",
+                Item = {WizardStaff, BirthdayCake},
                 ImagePath = "",
                 GameNPC =  GuildMasterNPC
             };
             Islands.Add(FantasyIsland);
 
-
+            Islands PartyIsland = new Islands()
+            {
+                Name = "Party Island",
+                Narration= "" ,
+                Description = "A never ending Event!",
+                Item = { },
+                ImagePath = "",
+                
+            };
+            Islands.Add(PartyIsland);
 
 
         }
