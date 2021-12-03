@@ -15,30 +15,16 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <Rectangle x:Name="SideBar" Fill="#FFF6EAE0" HorizontalAlignment="Left" Stroke="Black" Width="199" Height="449" VerticalAlignment="Top"/>
-        <Rectangle Margin="242,85,36,0" Stroke="Black" Fill="#FFF6EAE0" Height="326" VerticalAlignment="Top"/>
-        <Button x:Name="BackButton" Content="Back" Margin="10,416,0,0" FontSize="16" FontStretch="Normal" FontFamily="Showcard Gothic" Background="#FF1A1A1A" Foreground="#FFF6EAE0" Click="BackButton_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Width="57"/>
-        <Button x:Name="QuestButton" Content="Quest" Margin="123,416,0,0" Foreground="#FFF6EAE0" Background="#FF1A1A1A" FontFamily="Showcard Gothic" FontSize="16" Click="QuestButton_Click" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="56"/>
-        <Button x:Name="ItemButton" Content="Button" Margin="263,355,0,0" Click="ItemButton_Click" Visibility="Visible" Height="40" VerticalAlignment="Top" Background="#FF1E2020" Foreground="#FFF6EAE0" FontSize="20" HorizontalAlignment="Left" Width="137"/>
-        <Button x:Name="InventoryButton" Content="Inventory" Margin="10,99,0,0" VerticalAlignment="Top" Height="58" Click="InventoryButton_Click" FontFamily="Rockwell" IsCancel="True" FontSize="20" Background="#FF1E2020" Foreground="#FFF6EAE0" HorizontalAlignment="Left" Width="176"/>
-        <Label x:Name="SidebarTitle" Content="The Archipelgo" Margin="10,23,0,0" Foreground="#FF1E2020" FontSize="20" FontFamily="Showcard Gothic" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.096"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
+        <Label x:Name="IslandNarration" Content="Label" HorizontalAlignment="Right" Margin="0,110,50,39" Width="487" Foreground="#FF1E2020" Background="#FFF6EAE0" FontSize="20"/>
+        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="10,416,0,0" Width="64" FontSize="16" FontStretch="Normal" FontFamily="Showcard Gothic" Background="#FF1A1A1A" Foreground="#FFF6EAE0" Click="BackButton_Click" Height="24" VerticalAlignment="Top"/>
+        <Button x:Name="QuestButton" Content="Quest" HorizontalAlignment="Right" Margin="0,416,611,0" Foreground="#FFF6EAE0" Background="#FF1A1A1A" FontFamily="Showcard Gothic" FontSize="16" Click="QuestButton_Click" Width="64" Height="24" VerticalAlignment="Top"/>
+        <Button x:Name="ItemButton" Content="Button" HorizontalAlignment="Right" Margin="0,0,400,61" Width="122" Click="ItemButton_Click" Visibility="Visible" Height="38" VerticalAlignment="Bottom"/>
+        <Button x:Name="InventoryButton" Content="Inventory" Margin="10,118,0,0" VerticalAlignment="Top" Height="58" Click="InventoryButton_Click" FontFamily="Rockwell" IsCancel="True" FontSize="20" Background="#FF1E2020" Foreground="#FFF6EAE0" HorizontalAlignment="Left" Width="176"/>
+        <Label x:Name="SidebarTitle" Content="The Archipelgo" Margin="10,18,0,0" VerticalAlignment="Top" Height="62" Foreground="#FF1E2020" FontSize="20" FontFamily="Showcard Gothic" HorizontalAlignment="Left" Width="176"/>
         <Label x:Name="InventoryTitle" Content="Inventory" HorizontalAlignment="Left" Margin="13,18,0,0" VerticalAlignment="Top" Height="62" Width="176" Foreground="#FF1E2020" FontSize="30" FontFamily="Showcard Gothic" Visibility="Hidden"/>
         <Button x:Name="BackButtonInventory" Content="Back" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top" Width="64" FontSize="16" FontStretch="Normal" FontFamily="Showcard Gothic" Background="#FF1A1A1A" Foreground="#FFF6EAE0" Click="BackButtonInventory_Click" Visibility="Hidden"/>
         <Label x:Name="InventoryList" Content="Label" HorizontalAlignment="Left" Margin="22,85,0,0" VerticalAlignment="Top" Height="326" Width="164" Visibility="Hidden" FontFamily="Rockwell" FontSize="20"/>
-        <TextBlock x:Name="IslandNarration" Margin="258,99,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="267" Foreground="#FF1E2020" FontFamily="Rockwell" FontSize="16" HorizontalAlignment="Left" Width="492"/>
-        <Button x:Name="IslandRoomButtons" Content="Button" Margin="666,366,0,0" VerticalAlignment="Top" Height="34" FontFamily="Rockwell" FontSize="14" Click="IslandRoomButtons_Click" HorizontalAlignment="Left" Width="84" Background="#FF1A1A1A" Foreground="#FFF6EAE0"/>
-
-
-
+        <Button x:Name="ItemButtonTwo" Content="Button" HorizontalAlignment="Right" Margin="0,0,400,104" Width="122" Visibility="Visible" Height="38" VerticalAlignment="Bottom" Click="ItemButtonTwo_Click"/>
 
     </Grid>
 </Page>

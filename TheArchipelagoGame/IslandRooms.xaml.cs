@@ -36,7 +36,6 @@ namespace TheArchipelagoGame
 
         }
 
-        //Inventory Button
         private void InventoryButton_Click(object sender, RoutedEventArgs e)
         {
             InventoryList.Visibility = Visibility.Visible;
@@ -52,7 +51,6 @@ namespace TheArchipelagoGame
         {
             NavigationService.GoBack();
         }
-        //Quest Button
         private void QuestButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(MainWindow.game.QuestDescription);
