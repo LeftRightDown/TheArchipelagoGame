@@ -25,10 +25,15 @@ namespace TheArchipelagoGame
             InitializeComponent();
             IslandTitle.Content = MainWindow.game.CurrentIsland.Name;
             IslandNarration.Text = MainWindow.game.CurrentIsland.Narration;
-            ItemButton.Content = MainWindow.game.CurrentIsland.Item[0].Name;
-            ItemButton.ToolTip = MainWindow.game.CurrentIsland.Item[0].Description;
 
+            ItemButtonOne.Content = MainWindow.game.CurrentIsland.Item[0].Name;
+            ItemButtonOne.ToolTip = MainWindow.game.CurrentIsland.Item[0].Description;
 
+            ItemButtonTwo.Content = MainWindow.game.CurrentIsland.Item[1].Name;
+            ItemButtonTwo.ToolTip = MainWindow.game.CurrentIsland.Item[1].Description;
+
+            RoomButton.Content = MainWindow.game.CurrentIsland.Rooms[0].Name;
+            RoomButton.ToolTip = MainWindow.game.CurrentIsland.Rooms[0].Description;
 
             string inventory = String.Empty;
 
@@ -39,76 +44,94 @@ namespace TheArchipelagoGame
             InventoryList.Content = inventory;
 
         }
-        //Back Button
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
-        }
-        //Quest Button
-        private void QuestButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(MainWindow.game.QuestDescription);
-        }
 
-        //Item Button
-        private void ItemButton_Click(object sender, RoutedEventArgs e)
+        //Side Buttons
+        private void SideBarButtons_Click(object sender, RoutedEventArgs e)
         {
-            string items = String.Empty;
-            
+            Button button = (Button)sender;
+            string itemName = String.Empty;
 
-            items = MainWindow.game.CurrentIsland.Item[0].Name;
-            if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
+            switch (button.Name)
             {
-                MainWindow.game.player.InventoryAdd(items);
-                this.NavigationService.Refresh();
-                MessageBox.Show($"You have Aquired {items}!");
+                case "InventoryButton":
+                    //InventoryClick
+                    InventoryList.Visibility = Visibility.Visible;
+                    InventoryTitle.Visibility = Visibility.Visible;
+                    InventoryButton.Visibility = Visibility.Hidden;
+                    SidebarTitle.Visibility = Visibility.Hidden;
+                    BackButton.Visibility = Visibility.Hidden;
+                    BackButtonInventory.Visibility = Visibility.Visible;
+                    break;
+
+                case "BackButtonInventory":
+                    //Inventory Back Button
+                    InventoryList.Visibility = Visibility.Hidden;
+                    InventoryTitle.Visibility = Visibility.Hidden;
+                    InventoryButton.Visibility = Visibility.Visible;
+                    SidebarTitle.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Visible;
+                    BackButtonInventory.Visibility = Visibility.Hidden;
+                    break;
+
+                case "BackButton":
+                    //Back Button
+                    NavigationService.GoBack();
+                    break;
+
+                case "QuestButton":
+                    //Quest Button
+                    MessageBox.Show(MainWindow.game.QuestDescription);
+                    break;
             }
-            else
+        }
+        //Middle Buttons
+        private void MiddleButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string itemName = String.Empty;
+
+            switch (button.Name)
             {
-                MessageBox.Show($"You Arleady have {items} in your inventory");
+                case "ItemButtonOne":
+                    //Item Button 1
+                    string items = String.Empty;
+
+                    items = MainWindow.game.CurrentIsland.Item[0].Name;
+                    if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
+                    {
+                        MainWindow.game.player.InventoryAdd(items);
+                        this.NavigationService.Refresh();
+                        MessageBox.Show($"You have Aquired {items}!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"You Arleady have {items} in your inventory.");
+                    }
+                    break;
+
+                case "ItemButtonTwo":
+                    //Item Button 2
+                    items = MainWindow.game.CurrentIsland.Item[1].Name;
+                    if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
+                    {
+                        MainWindow.game.player.InventoryAdd(items);
+                        this.NavigationService.Refresh();
+                        MessageBox.Show($"You have Aquired {items}!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"You Arleady have {items} in your inventory.");
+                    }
+                    break;
+
+                case "RoomButton":
+                    //Room Button
+                    NavigationService.Navigate(new Uri("IslandRooms.xaml", UriKind.Relative));
+                    break;
+
             }
-        }
-        
-            //Inventory Button
-        private void InventoryButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            InventoryList.Visibility = Visibility.Visible;
-            InventoryTitle.Visibility = Visibility.Visible;
-            InventoryButton.Visibility = Visibility.Hidden;
-            SidebarTitle.Visibility= Visibility.Hidden;
-            BackButton.Visibility = Visibility.Hidden;
-            BackButtonInventory.Visibility = Visibility.Visible;
             
         }
-
-        private void BackButtonInventory_Click(object sender, RoutedEventArgs e)
-        {
-            InventoryList.Visibility = Visibility.Hidden;
-            InventoryTitle.Visibility = Visibility.Hidden;
-            InventoryButton.Visibility = Visibility.Visible;
-            SidebarTitle.Visibility = Visibility.Visible;
-            BackButton.Visibility = Visibility.Visible;
-            BackButtonInventory.Visibility = Visibility.Hidden;
-        }
-
-        
-        private void IslandRoomButtons_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("IslandRooms.xaml", UriKind.Relative));
-        }
-
-
-
-        //private void PartyIslandReveal()   
-        //{
-        //    string BirthdayCake = MainWindow.game.Item[;
-        //    if (MainWindow.game.player.SearchInventory())
-        //    {
-
-        //    }
-
-        //}
 
 
 

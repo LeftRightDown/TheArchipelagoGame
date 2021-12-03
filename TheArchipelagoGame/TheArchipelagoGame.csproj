@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="End.xaml.cs">
+      <DependentUpon>End.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IslandRooms.xaml.cs">
       <DependentUpon>IslandRooms.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
     <Compile Include="TropicalSea.xaml.cs">
       <DependentUpon>TropicalSea.xaml</DependentUpon>
     </Compile>
+    <Page Include="End.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="IslandRooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

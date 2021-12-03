@@ -25,9 +25,13 @@ namespace TheArchipelagoGame
             InitializeComponent();
 
             string inventory = String.Empty;
-            ItemButtonTwo.Content = MainWindow.game.CurrentIsland.Item[1].Name;
+            ItemButtonThree.Content = MainWindow.game.CurrentIsland.Item[2].Name; 
+            ItemButtonThree.ToolTip = MainWindow.game.CurrentIsland.Item[2].Description;
+
             IslandTitle.Content = MainWindow.game.CurrentIsland.Rooms[0].Name;
-            IslandNarration.Text = MainWindow.game.CurrentIsland.Rooms[1].Description;
+            IslandNarration.Text = MainWindow.game.CurrentIsland.Rooms[0].Description;
+           
+
             foreach (string item in MainWindow.game.player.Inventory)
             {
                 inventory += $"{item}\n";
@@ -36,34 +40,43 @@ namespace TheArchipelagoGame
 
         }
 
-        private void InventoryButton_Click(object sender, RoutedEventArgs e)
+        private void SideBarButtons_Click(object sender, RoutedEventArgs e)
         {
-            InventoryList.Visibility = Visibility.Visible;
-            InventoryTitle.Visibility = Visibility.Visible;
-            InventoryButton.Visibility = Visibility.Hidden;
-            SidebarTitle.Visibility = Visibility.Hidden;
-            BackButton.Visibility = Visibility.Hidden;
-            BackButtonInventory.Visibility = Visibility.Visible;
-        }
+            Button button = (Button)sender;
+            string itemName = String.Empty;
 
-        //Backbutton
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
-        }
-        private void QuestButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(MainWindow.game.QuestDescription);
-        }
+            switch (button.Name)
+            {
+                case "InventoryButton":
+                    //InventoryClick
+                    InventoryList.Visibility = Visibility.Visible;
+                    InventoryTitle.Visibility = Visibility.Visible;
+                    InventoryButton.Visibility = Visibility.Hidden;
+                    SidebarTitle.Visibility = Visibility.Hidden;
+                    BackButton.Visibility = Visibility.Hidden;
+                    BackButtonInventory.Visibility = Visibility.Visible;
+                    break;
 
-        private void BackButtonInventory_Click(object sender, RoutedEventArgs e)
-        {
-            InventoryList.Visibility = Visibility.Hidden;
-            InventoryTitle.Visibility = Visibility.Hidden;
-            InventoryButton.Visibility = Visibility.Visible;
-            SidebarTitle.Visibility = Visibility.Visible;
-            BackButton.Visibility = Visibility.Visible;
-            BackButtonInventory.Visibility = Visibility.Hidden;
+                case "BackButtonInventory":
+                    //Inventory Back Button
+                    InventoryList.Visibility = Visibility.Hidden;
+                    InventoryTitle.Visibility = Visibility.Hidden;
+                    InventoryButton.Visibility = Visibility.Visible;
+                    SidebarTitle.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Visible;
+                    BackButtonInventory.Visibility = Visibility.Hidden;
+                    break;
+
+                case "BackButton":
+                    //Back Button
+                    NavigationService.GoBack();
+                    break;
+
+                case "QuestButton":
+                    //Quest Button
+                    MessageBox.Show(MainWindow.game.QuestDescription);
+                    break;
+            }
         }
         //Second Item Button 
         private void ItemButtonTwo_Click(object sender, RoutedEventArgs e)
@@ -72,10 +85,18 @@ namespace TheArchipelagoGame
             string items = String.Empty;
             string requiredItems = MainWindow.game.CurrentIsland.GameNPC.RequiredItem.Name;
             string requiredItemsTwo = MainWindow.game.CurrentIsland.GameNPC.RequiredItemTwo.Name;
-            if (MainWindow.game.player.SearchInventory(requiredItems) && MainWindow.game.player.SearchInventory(requiredItemsTwo))
+
+            string EndingRequirementOne = MainWindow.game.Islands[3].Item[0].Name;
+            string EndingRequirementTwo = MainWindow.game.Islands[3].Item[1].Name;
+
+            if (MainWindow.game.player.Inventory.Contains(EndingRequirementOne) && MainWindow.game.player.Inventory.Contains(EndingRequirementTwo))
             {
-                ItemButtonTwo.Visibility = Visibility.Visible;
-                items = MainWindow.game.CurrentIsland.Item[1].Name;
+                NavigationService.Navigate(new Uri("End.xaml", UriKind.Relative));
+
+            }
+           else if (MainWindow.game.player.SearchInventory(requiredItems) && MainWindow.game.player.SearchInventory(requiredItemsTwo))
+            {
+                items = MainWindow.game.CurrentIsland.Item[2].Name;
                 if (!MainWindow.game.player.SearchInventory(items) && !MainWindow.game.NPCInventory.Contains(items))
                 {
                     MainWindow.game.player.Trade(items, requiredItems);
@@ -91,9 +112,6 @@ namespace TheArchipelagoGame
             {
                 MessageBox.Show($"You do not have {requiredItems} & {requiredItemsTwo} in inventory.");
             }
-
-
-
 
         }
     }
