@@ -20,6 +20,7 @@ namespace TheArchipelagoGame
         public Islands CurrentIsland { get; set; }
         public Item CurrentItem { get; set; }
         public string QuestDescription;
+        
 
 
         public Game()
@@ -56,20 +57,18 @@ namespace TheArchipelagoGame
             Item Plate = new Item("Plate", "Biodegradable Paper Plate.");
             Item Fork = new Item("Fork", "Biodegradable Fork.");
 
-            //Creatng Rooms
-            Rooms PirateShip = new Rooms("Pirate Ship", "A Shady yet wholesome home.");
-            Rooms Dungeons = new Rooms("Dungeon", "A Mysterious cave with nice furniture.");
-            Rooms Saloon = new Rooms("Saloon", "A Happy and joyous place to forget.");
-            Rooms PartyRoom = new Rooms("Party Room", "Where the fun begins!");
-
             //Creating NPCS
             NPC PirateNPC = new NPC("Captian Bon", "Honors Pirate Code", Flintlock, CowboyHat,GoldCoin );
             NPC SheriffNPC = new NPC("Sheriff Marcus", "Man of Few Words", CowboyHat, WizardStaff, EyePatch);
             NPC GuildMasterNPC = new NPC("Guild Master Egor", "Retired Cake Maker", BirthdayCake, Flintlock, CakeCoupon);
-            NPC BirthdayPersonNPC = new NPC("Birthday Child", "Today is their birthday", SliceofCake, Plate, Fork);
+            NPC BirthdayPersonNPC = new NPC("Sir Jordy", "Today is their birthday", SliceofCake, Plate, Fork);
             
 
-
+            //Creatng Rooms
+            Rooms PirateShip = new Rooms("Pirate Ship", $"A Shady yet wholesome home. Here you can find Flintlock.", "Media/PirateShip.jpg");
+            Rooms Dungeon = new Rooms("Dungeon", $"A Mysterious cave with nice furniture. Here you can find Birthday Cake.", "Media/Dungeon.jpg");
+            Rooms Saloon = new Rooms("Saloon", $"A Happy and joyous place to forget. Here you can find Cake Coupon.", "Media/Saloon.jpg");
+            Rooms PartyRoom = new Rooms("Receptional Hall", $"Where the fun begins! Here you can find Slice of Cake.", "Media/Cake.png");
 
 
             //Creating Islands
@@ -77,12 +76,13 @@ namespace TheArchipelagoGame
             //0
             Islands PirateIsland = new Islands()
             {
-                Name = @"Pirate Island
-                    ",
-                Description = $"Island Filled with the meanest and badest Pirates",
-                Narration = $"You dock your ship and walk off the port when you see {PirateNPC.Name}",
+                Name = "Pirate Island",
+                Description = $"Island Filled with the meanest and badest Pirates that can't last a day without a mutiny amoungst themsleves. Here you will find {PirateNPC.Name}.",
+                Narration = $"You dock your ship and walk off the port when you see {PirateNPC.Name} roll along the port floor stopping right in front of you." +
+                $"Before he can give you Flintlock he requires {PirateNPC.RequiredItem.Name} from Frontier Island & {PirateNPC.RequiredItemTwo.Name} from Pirate Island. " +
+                $"Once you take gather the required items meet him in {PirateShip.Name}.",
                 Item = { EyePatch, GoldCoin, Flintlock},
-                ImagePath = "",
+                ImagePath = "Media/PirateIsland.png",
                 Rooms = { PirateShip },
                 GameNPC = PirateNPC
             };
@@ -91,12 +91,13 @@ namespace TheArchipelagoGame
             //1
             Islands FrontierIsland = new Islands()
             {
-                Name = @"Frontier Island
-                        ",
-                Description = $"A western oasis for Cowboys, Cowgirls, and Outlaws",
-                Narration = $"Before {SheriffNPC.Name} can give you the coupon he wants to trade it for a Wizard Staff and Eye.",
-                Item = { HorseShoe, CowboyHat, CakeCoupon},
-                ImagePath = "",
+                Name = "Frontier Island",
+                Description = $"A western oasis for all kinds of people. A new frontier for American expansion westward! Here you will find {SheriffNPC.Name}.",
+                Narration = $"Yout meet {SheriffNPC.Name} in the middle of town. " +
+                $"Before {SheriffNPC.Name} can give you Cake Coupon he wants to trade it for a {SheriffNPC.RequiredItem.Name} from Middle-Earth Island & {SheriffNPC.RequiredItemTwo.Name} from Pirate Island." +
+                $" Once you take gather the required items meet him in {Saloon.Name}.",
+                Item = {HorseShoe, CowboyHat, CakeCoupon},
+                ImagePath = "Media/WildWest Island.png",
                 Rooms = {Saloon},
                 GameNPC = SheriffNPC
             };
@@ -104,13 +105,14 @@ namespace TheArchipelagoGame
             //2
             Islands FantasyIsland = new Islands()
             {
-                Name = @"Middle-Earth Island
-                         ",
-                Narration = $"{GuildMasterNPC.Name} greets you with open arms. Before he can give you the cake he requires {GuildMasterNPC.RequiredItem.Name} & {GuildMasterNPC.RequiredItemTwo.Name}",
-                Description = @"A Magical and Mystic Island full of things straigh out of a fantasy book.",
+                Name = "Fantasy Island",
+                Description = $"A Magical and Mystic Island full of things straight out of a fantasy book. Here you will find {GuildMasterNPC.Name}",
+                Narration = $"{GuildMasterNPC.Name} greets you with open arms. " +
+                $"Before he can give you Birthday Cake he requires {GuildMasterNPC.RequiredItem.Name} from Pirate Island & {GuildMasterNPC.RequiredItemTwo.Name} for {GuildMasterNPC.NPCItem.Name[2]} from Frontier Island. " +
+                $"Once you take gather the required items meet him in {Dungeon.Name}.",
                 Item = {WizardStaff, HealthPotion, BirthdayCake },
-                ImagePath = "",
-                Rooms = {Dungeons},
+                ImagePath = "Media/FantasyIsland.png",
+                Rooms = {Dungeon},
                 GameNPC = GuildMasterNPC
             };
             Islands.Add(FantasyIsland);
@@ -118,10 +120,11 @@ namespace TheArchipelagoGame
             Islands PartyIsland = new Islands()
             {
                 Name = "Party Island",
-                Narration = $"CONGRAGULATIONS YOU'VE DELIVERED THE CAKE AND HEALTH POTIONS!",
-                Description = "A never ending Event!",
+                Narration = $"WELCOME TO PARTY ISLAND! An Island that never wants to sleep! Today We're celebrating {BirthdayPersonNPC.Name}!" +
+                $" Here, grab {BirthdayPersonNPC.RequiredItem.Name} & {BirthdayPersonNPC.RequiredItemTwo.Name} for A Slice of Cake in the {PartyRoom.Name}!",
+                Description = "CONGRATULATIONS YOU'VE SUCCESSFULLY DELIVERED THE CAKE AND HEALTH POTIONS!",
                 Item = {Plate, Fork, SliceofCake},
-                ImagePath = "",
+                ImagePath = "Media/PartyIsland.png",
                 Rooms = {PartyRoom},
                 GameNPC = BirthdayPersonNPC
 

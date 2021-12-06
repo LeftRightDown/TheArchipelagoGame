@@ -23,7 +23,8 @@ namespace TheArchipelagoGame
         public Start()
         {
             InitializeComponent();
-
+            
+          
         }
 
         private void NavigateButton_Click(object sender, RoutedEventArgs e)

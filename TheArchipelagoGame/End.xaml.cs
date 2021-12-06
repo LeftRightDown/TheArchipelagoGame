@@ -23,7 +23,13 @@ namespace TheArchipelagoGame
         public End()
         {
             InitializeComponent();
+            IslandDescription.Text = MainWindow.game.CurrentIsland.Description;
+            IslandTitle.Content = " Thanks for Playing!";
         }
 
+        private void NavigateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

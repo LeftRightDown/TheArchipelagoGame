@@ -23,6 +23,10 @@ namespace TheArchipelagoGame
         public IslandRooms()
         {
             InitializeComponent();
+            ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
+            Uri roomimage = new Uri(MainWindow.game.CurrentIsland.Rooms[0].ImagePath, UriKind.Relative);
+            RoomImage.Source = (ImageSource)imageSourceConverter.ConvertFrom(roomimage);
+
 
             string inventory = String.Empty;
             ItemButtonThree.Content = MainWindow.game.CurrentIsland.Item[2].Name; 

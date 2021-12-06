@@ -25,6 +25,7 @@ namespace TheArchipelagoGame
         {
             InitializeComponent();
 
+            ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
 
             Option1.Content = MainWindow.game.Islands[0].Name;
             Option2.Content = MainWindow.game.Islands[1].Name;

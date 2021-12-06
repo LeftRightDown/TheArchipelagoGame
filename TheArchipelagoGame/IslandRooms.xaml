@@ -25,7 +25,8 @@
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBlock x:Name="IslandNarration" Margin="266,100,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="124" Foreground="#FF1E2020" FontFamily="Rockwell" FontSize="16" HorizontalAlignment="Left" Width="472"/>
+        <TextBlock x:Name="IslandNarration" Margin="266,100,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="124" Foreground="#FF1E2020" FontFamily="Rockwell" FontSize="18" HorizontalAlignment="Left" Width="472"/>
+        <Image x:Name="RoomImage" HorizontalAlignment="Left" Height="214" Margin="219,276,0,0" VerticalAlignment="Top" Width="370"/>
 
 
 

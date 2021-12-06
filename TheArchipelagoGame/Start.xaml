@@ -16,6 +16,11 @@
         <Button x:Name="Button1" Content="Start" Margin="14,118,0,0" VerticalAlignment="Top" Height="58" Click="NavigateButton_Click" FontFamily="Rockwell" IsCancel="True" FontSize="36" Foreground="#FFF6EAE0" Background="#FF1E2020" HorizontalAlignment="Left" Width="176"/>
         <Button x:Name="Button2" Content="Credits" Margin="14,0,0,0" VerticalAlignment="Center" Height="58" Click="NavigateButton_Click" FontSize="36" FontFamily="Rockwell" Foreground="#FFF6EAE0" Background="#FF1E2020" HorizontalAlignment="Left" Width="176"/>
         <Button x:Name="Button3" Content="Exit" Margin="14,351,0,0" VerticalAlignment="Top" Height="58" FontSize="36" FontFamily="Rockwell" Click="NavigateButton_Click" Foreground="#FFF6EAE0" Background="#FF1E2020" HorizontalAlignment="Left" Width="176"/>
+        <Image x:Name="StartImage" HorizontalAlignment="Left" Height="700" Margin="256,0,0,0" VerticalAlignment="Center" Width="500" Source="/14903.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/FlatMap.png" Stretch="Uniform"/>
+            </Image.OpacityMask>
+        </Image>
 
     </Grid>
 </Page>

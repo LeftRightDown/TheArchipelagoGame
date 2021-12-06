@@ -10,12 +10,13 @@
 
     <Grid>
         <Rectangle Margin="139,196,139,0" Stroke="Black" Fill="#FFF6EAE0" Height="163" VerticalAlignment="Top"/>
-        <Label x:Name="IslandTitle" Content="TITLE" Margin="152,23,152,0" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="24" Height="44" VerticalAlignment="Top">
+        <Label x:Name="IslandTitle" Content="TITLE" Margin="61,23,152,0" Foreground="#FFF6EAE0" FontFamily="Showcard Gothic" FontSize="36" Height="153" VerticalAlignment="Top">
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
         </Label>
-        <TextBlock x:Name="IslandNarration" Margin="0,211,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="124" Foreground="#FF1E2020" FontFamily="Rockwell" FontSize="16" HorizontalAlignment="Center" Width="472"/>
+        <TextBlock x:Name="IslandDescription" Margin="0,211,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="124" Foreground="#FF1E2020" FontFamily="Rockwell" FontSize="16" HorizontalAlignment="Center" Width="472"/>
+        <Button x:Name="Button3" Content="Exit" Margin="586,425,0,0" VerticalAlignment="Top" Height="58" FontSize="36" FontFamily="Rockwell" Click="NavigateButton_Click" Foreground="#FF1E2020" Background="#FFF6EAE0" HorizontalAlignment="Left" Width="176"/>
 
     </Grid>
 </Page>

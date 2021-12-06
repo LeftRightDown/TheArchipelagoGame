@@ -35,6 +35,10 @@ namespace TheArchipelagoGame
             RoomButton.Content = MainWindow.game.CurrentIsland.Rooms[0].Name;
             RoomButton.ToolTip = MainWindow.game.CurrentIsland.Rooms[0].Description;
 
+            ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
+            Uri islandimage = new Uri(MainWindow.game.CurrentIsland.ImagePath, UriKind.Relative);
+            IslandImage.Source = (ImageSource)imageSourceConverter.ConvertFrom(islandimage);
+
             string inventory = String.Empty;
 
             foreach (string item in MainWindow.game.player.Inventory)

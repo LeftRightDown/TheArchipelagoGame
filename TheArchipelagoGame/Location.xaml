@@ -25,9 +25,10 @@
         <Label x:Name="InventoryTitle" Content="Inventory" HorizontalAlignment="Left" Margin="13,18,0,0" VerticalAlignment="Top" Height="62" Width="176" Foreground="#FF1E2020" FontSize="30" FontFamily="Showcard Gothic" Visibility="Hidden"/>
         <Button x:Name="BackButtonInventory" Content="Back" HorizontalAlignment="Left" Margin="10,416,0,0" VerticalAlignment="Top" Width="64" FontSize="16" FontStretch="Normal" FontFamily="Showcard Gothic" Background="#FF1A1A1A" Foreground="#FFF6EAE0" Click="SideBarButtons_Click" Visibility="Hidden"/>
         <Label x:Name="InventoryList" Content="Label" HorizontalAlignment="Left" Margin="22,85,0,0" VerticalAlignment="Top" Height="326" Width="164" Visibility="Hidden" FontFamily="Rockwell" FontSize="20"/>
-        <TextBlock x:Name="IslandNarration" HorizontalAlignment="Left" Margin="278,147,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="207" Width="437"/>
+        <TextBlock x:Name="IslandNarration" HorizontalAlignment="Left" Margin="278,147,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="179" Width="437" FontFamily="Rockwell" FontSize="18" TextDecorations="{x:Null}"/>
         <Button x:Name="RoomButton" Content="Button" HorizontalAlignment="Left" Margin="641,359,0,0" VerticalAlignment="Top" Height="79" Width="91" Background="#FF1A1A1A" Foreground="#FFF6EAE0" FontFamily="Rockwell" Click="MiddleButton_Click"/>
         <Button x:Name="ItemButtonTwo" Content="Button" HorizontalAlignment="Right" Margin="0,0,380,155" Width="142" Click="MiddleButton_Click" Visibility="Visible" Height="44" VerticalAlignment="Bottom" Background="#FF1A1A1A" Foreground="#FFF6EAE0" FontFamily="Rockwell" FontSize="16"/>
+        <Image x:Name="IslandImage" HorizontalAlignment="Left" Height="156" Margin="420,284,0,0" VerticalAlignment="Top" Width="218"/>
 
 
 
