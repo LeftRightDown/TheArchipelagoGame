@@ -25,6 +25,7 @@ namespace TheArchipelagoGame
         {
             InitializeComponent();
             ContentFrame.Navigate(new Start());
+            Title = "The Archipelago";
 
         }
 

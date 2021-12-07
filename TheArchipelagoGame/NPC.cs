@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace TheArchipelagoGame
 {
-    public class NPC
+    public class NPC: Player
     {
-        public string Name;
-        public string Description;
+        
         public Item NPCItem { get; set; }
         public Item RequiredItem { get; set; }
         public Item RequiredItemTwo { get; set; }

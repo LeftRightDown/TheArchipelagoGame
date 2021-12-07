@@ -40,7 +40,10 @@ namespace TheArchipelagoGame
                 case "Button2":
                     //Credits
                     MessageBox.Show(@"
-     Creator: Zachary Tan
+     Designed and Programed By: Zachary Tan
+     Debugging Assistance from: Mack, Pearson-Muggli
+     Additional Code reused from in class group demos.
+     Images from Multiple Sources: See Documentation for more info
 
                             ");
                     break;

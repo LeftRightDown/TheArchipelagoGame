@@ -21,6 +21,7 @@ namespace TheArchipelagoGame
         public Item CurrentItem { get; set; }
         public string QuestDescription;
         
+        
 
 
         public Game()
